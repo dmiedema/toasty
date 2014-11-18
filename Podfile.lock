@@ -1,0 +1,15 @@
+PODS:
+  - CRToast (0.0.7)
+
+DEPENDENCIES:
+  - CRToast (from `git@github.com:dmiedema/CRToast`, branch `tap-and-swipe`)
+
+EXTERNAL SOURCES:
+  CRToast:
+    :branch: tap-and-swipe
+    :git: git@github.com:dmiedema/CRToast
+
+SPEC CHECKSUMS:
+  CRToast: da11d94a05b1351a87bb26cbf8f25e80ed2e7115
+
+COCOAPODS: 0.34.4
