@@ -1,13 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B23" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="V9l-Je-GoR">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="xKS-Lw-RB3">
+            <objects>
+                <navigationController id="V9l-Je-GoR" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mZg-6K-rXK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="BFi-mt-VAn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uxw-Rx-JwQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-668" y="351"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,8 +31,63 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDC-xM-J9N">
+                                <rect key="frame" x="149" y="497" width="302" height="30"/>
+                                <state key="normal" title="With Tap &amp; Swipe (Specified tap then swipe)">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="withTapAndSwipePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mzj-Av-cG3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OIb-ZE-sPs">
+                                <rect key="frame" x="270" y="421" width="60" height="30"/>
+                                <state key="normal" title="With Tap">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="withTapPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qog-EI-NZk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uqM-xa-IXq">
+                                <rect key="frame" x="261" y="459" width="78" height="30"/>
+                                <state key="normal" title="With Swipe">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="withSwipePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sUi-Lj-QDx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KFb-Xn-9xP">
+                                <rect key="frame" x="149" y="550" width="302" height="30"/>
+                                <state key="normal" title="With Tap &amp; Swipe (Specified swipe then tap)">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="withTapAndSwipeDifferentPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n8r-6c-SPF"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="KFb-Xn-9xP" secondAttribute="centerX" id="JI2-Jb-www"/>
+                            <constraint firstAttribute="centerX" secondItem="uqM-xa-IXq" secondAttribute="centerX" id="KIE-Sn-PGU"/>
+                            <constraint firstItem="uqM-xa-IXq" firstAttribute="top" secondItem="OIb-ZE-sPs" secondAttribute="bottom" constant="8" id="V3M-El-4Rl"/>
+                            <constraint firstItem="KFb-Xn-9xP" firstAttribute="top" secondItem="nDC-xM-J9N" secondAttribute="bottom" constant="8" id="bAJ-TI-Rzc"/>
+                            <constraint firstItem="nDC-xM-J9N" firstAttribute="top" secondItem="uqM-xa-IXq" secondAttribute="bottom" constant="8" id="bAp-ja-S06"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nDC-xM-J9N" secondAttribute="bottom" constant="20" id="bZ8-So-2Ms"/>
+                            <constraint firstAttribute="centerX" secondItem="OIb-ZE-sPs" secondAttribute="centerX" id="cJH-Ii-C1w"/>
+                            <constraint firstAttribute="centerX" secondItem="nDC-xM-J9N" secondAttribute="centerX" id="jup-rF-YsI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="KFb-Xn-9xP" secondAttribute="bottom" constant="20" id="lcq-7b-CSJ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="bZ8-So-2Ms"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="BGt-I7-BMj"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
